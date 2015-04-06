@@ -35,6 +35,11 @@ Run output window in full screen and connect to a video mixer with Chroma key su
 
 Currently the project is in prototype stage. Hence, there are no tests. You should open http://server:5000 to see the translator input and in another browser window open http://servername:3000/output to see translation output. each message sent from the input page should also be seen in the console and info about clients connecting/disconnecting.
 
+## Screenshots
+![litr8r prototype input screen](http://tailorvj.github.io/images/20150406-litr8r-input-heroku.jpg)
+
+![litr8r prototype output screen](http://tailorvj.github.io/images/20150406-litr8r-output-heroku.jpg)
+
 ## Contributors
 
 @tailorvj
