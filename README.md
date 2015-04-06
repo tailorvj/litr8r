@@ -15,15 +15,15 @@ run node index to run the server and CTRL+C to stop it.
 ## Translation workflow
 The app consists of two main screens: Input and output. 
 
-Input is on http://servername:3000
+Output is on http://servername:5000
 
-Output is on http://servername:3000/output
+Input is on http://servername:5000/input
 
 Run output window in full screen and connect to a video mixer with Chroma key support. Use Chroma key to remove green background and mix with video input. 
 
 ## Tests
 
-Currently the project is in prototype stage. Hence, there are no tests. You should open http://server:3000 to see the translator input and in another browser window open http://servername:3000/output to see translation output. each message sent from the input page should also be seen in the console and info about clients connecting/disconnecting.
+Currently the project is in prototype stage. Hence, there are no tests. You should open http://server:5000 to see the translator input and in another browser window open http://servername:3000/output to see translation output. each message sent from the input page should also be seen in the console and info about clients connecting/disconnecting.
 
 ## Contributors
 

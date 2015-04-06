@@ -1,6 +1,10 @@
 {
   "name": "litr8r",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tailorvj/litr8r.git"
+  },  
   "description": "litr8r live translation with green screen for live broadcasts",
   "dependencies": {
     "express": "^4.10.2",
