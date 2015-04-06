@@ -12,6 +12,16 @@ Clone the project to a node.js server, cd into project folder and run npm instal
 
 run node index to run the server and CTRL+C to stop it. 
 
+## Heroku deployment
+
+If you have the heroku toolbelt installed, simply create a new heroku app, add a web dyno and deploy via git push heroku master.
+
+## Demo
+
+[Output](https://tranquil-anchorage-5276.herokuapp.com/).
+
+[Input](https://tranquil-anchorage-5276.herokuapp.com/input).
+
 ## Translation workflow
 The app consists of two main screens: Input and output. 
 
