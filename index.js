@@ -2,6 +2,36 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var fs  = require("fs");
+
+//var fs = require('fs'),
+//    readline = require('readline');
+
+//var rd = readline.createInterface({
+//    input: fs.createReadStream('/public/static/texts.txt'),
+//    output: process.stdout,
+//    terminal: false
+//});
+
+//rd.on('line', function(line) {
+//    console.log(line);
+//});
+
+function getPhrasesJSON(response) {
+  console.log("Request handler random was called.");
+  response.writeHead(200, {"Content-Type": "application/json"});
+  //var otherArray = ["item1", "item2"];
+  //var otherObject = { item1: "item1val", item2: "item2val" };
+    fs.readFile('/static/txt/texts.txt', function(err, f){
+        var textsArray = f.toString().split('\n');
+        // use the array
+        var json = JSON.stringify({ 
+          textsArray: textsArray
+        });
+        response.end(json);
+    });
+}
+
 var buffer = "";
 
 //serve static files from public folder
@@ -15,6 +45,8 @@ app.get('/input', function(req, res){
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/output.html');
 });
+
+app.get('/phrases.json', getPhrasesJSON);
 
 
 io.on('connection', function(socket){
