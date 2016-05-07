@@ -106,7 +106,7 @@ h1.subtitles {
     padding: 0;
     margin: 0 5vw;
     -moz-text-shadow: 2px 2px 4px #000000;   
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: 2px #111;
     width: 90vw;
 }
 
