@@ -17,9 +17,9 @@ var fs  = require("fs");
 //    console.log(line);
 //});
 
-function getPhrasesJSON(response) {
+function getPhrasesJSON(res) {
   console.log("Request handler random was called.");
-  response.writeHead(200, {"Content-Type": "application/json"});
+  res.writeHead(200, {"Content-Type": "application/json"});
   //var otherArray = ["item1", "item2"];
   //var otherObject = { item1: "item1val", item2: "item2val" };
     fs.readFile('/static/txt/texts.txt', function(err, f){
@@ -28,7 +28,7 @@ function getPhrasesJSON(response) {
         var json = JSON.stringify({ 
           textsArray: textsArray
         });
-        response.end(json);
+        res.end(json);
     });
 }
 
@@ -46,7 +46,9 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/output.html');
 });
 
-app.get('/phrases.json', getPhrasesJSON(response));
+app.get('/phrases.json', function(req, res){
+    getPhrasesJSON(res);
+});
 
 
 io.on('connection', function(socket){
