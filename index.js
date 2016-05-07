@@ -50,7 +50,9 @@ app.get('/phrases', function(req, res){
     getPhrasesJSON(res);
 });
 
-
+app.get('/text', function(req, res){
+    res.sendFile(__dirname + '/static/txt/texts.txt');
+});
 io.on('connection', function(socket){
   console.log('a user connected');
   io.sockets.connected[socket.id].emit('chat message',buffer);
