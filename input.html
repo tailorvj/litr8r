@@ -47,11 +47,11 @@
         <form action="">
           <input id="m" autocomplete="off" /><button>Send</button>
         </form>
-        <h1 class="subtitles yoglimogli" id="messages">
+        <h1 class="subtitles yoglimogli" id="nextphrase">
         This is where you see the output that is on screen. If you'd like to clear it, just press Enter without typing anything. 
         </h1>
-        <h1 class="subtitles yoglimogli" id="getsjson">
-        This is where you see the output that is on screen. If you'd like to clear it, just press Enter without typing anything. 
+        <h1 class="subtitles yoglimogli" id="prevphrase">
+        This is where the previous saved phrase is displayed. Next phrase is above form.
         </h1>
     </section>
       <script src="/socket.io/socket.io.js"></script>
@@ -75,9 +75,10 @@
 	  $('#messages').append(msg);
 	});
 	//get phrases JSON and be available to scripts
-	var myJSON;
+	var savedphrases;
 	$.getJSON('/phrases.json', function(res){
-	    myJSON = res;
+	    savedphrases = res;
+	    $('#nextphrase').text(savedphrases.textsArray[0]);
 	});
       </script>
       <script>
