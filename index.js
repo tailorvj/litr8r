@@ -46,7 +46,7 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/output.html');
 });
 
-app.get('/phrases.json', getPhrasesJSON);
+app.get('/phrases.json', getPhrasesJSON(response));
 
 
 io.on('connection', function(socket){
