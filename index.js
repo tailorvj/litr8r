@@ -22,7 +22,7 @@ function getPhrasesJSON(res) {
   res.writeHead(200, {"Content-Type": "application/json"});
   //var otherArray = ["item1", "item2"];
   //var otherObject = { item1: "item1val", item2: "item2val" };
-    fs.readFile('/static/txt/texts.txt', function(err, f){
+    fs.readFile(__dirname + '/public/txt/texts.txt', function(err, f){
         var textsArray = f.toString().split('\n');
         // use the array
         var json = JSON.stringify({ 
@@ -51,8 +51,9 @@ app.get('/phrases', function(req, res){
 });
 
 app.get('/text', function(req, res){
-    res.sendFile(__dirname + '/static/txt/texts.txt');
+    res.sendFile(__dirname + '/public/txt/texts.txt');
 });
+
 io.on('connection', function(socket){
   console.log('a user connected');
   io.sockets.connected[socket.id].emit('chat message',buffer);
