@@ -46,7 +46,7 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/output.html');
 });
 
-app.get('/phrases.json', function(req, res){
+app.get('/phrases', function(req, res){
     getPhrasesJSON(res);
 });
 
