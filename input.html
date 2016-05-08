@@ -75,14 +75,12 @@
 	var savedphrases, len;
 	$.getJSON('/phrases.json', function(res){
 	    console.log(res);
-	    /*
 	    savedphrases = res;
-	    len = savedphrases.textArray.length;
+	    len = savedphrases.textsArray.length;
         if (len > 0)
             $('#nextphrase').text(savedphrases.textsArray[0]);
         else
             $('#nextphrase').text('saved phrases buffer is empty');
-            */
 	});
 	//scroll through phrases
 	var currentindex = -1, screenbuffer = [
