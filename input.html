@@ -88,28 +88,33 @@
 	        'This is where the next saved phrase is displayed, press up key to get it into the form'
 	    ]
 	$("body").keydown(function(e) { 
-        switch(e){
-            case(e.keyCode == 38){
+        switch(e.keyCode){
+            case 38:
                 //arrow up was fired
                 //load previous phrase in buffer into form input and preview buffer zone
                 //load next phrase in buffer to preview-next and previous phrase to preview-prev
-            currentindex += 1;
-            screenbuffer.unshift(savedphrases.textArray[currentindex]);
-            $('#nextphrase').text(screenbuffer[0]);
-            $('#m').val(screenbuffer[1]);
-            $('#prevphrase').text(screenbuffer[2]);
-            e.preventDefault();
-            }
-            case(e.keyCode == 40){
+                currentindex += 1;
+                screenbuffer.unshift(savedphrases.textArray[currentindex]);
+                $('#nextphrase').text(screenbuffer[0]);
+                $('#m').val(screenbuffer[1]);
+                $('#prevphrase').text(screenbuffer[2]);
+                e.preventDefault();
+                break;
+            case 40:
                 //arrow down was fired
                 //load next phrase in buffer into form input and preview buffer zone
                 //load previous phrase in buffer to preview-previous and next phrase to preview-next
-            currentindex -= 1;
-            $('#nextphrase').text(screenbuffer[0]);
-            $('#m').val(screenbuffer[1]);
-            $('#prevphrase').text(screenbuffer[2]);
-            e.preventDefault();
-            }
+                currentindex -= 1;
+                screenbuffer.shift();
+                $('#nextphrase').text(screenbuffer[0]);
+                $('#m').val(screenbuffer[1]);
+                $('#prevphrase').text(screenbuffer[2]);
+                e.preventDefault();
+                break;
+            default:
+                $('#nextphrase').text(screenbuffer[0]);
+                $('#m').val(screenbuffer[1]);
+                $('#prevphrase').text(screenbuffer[2]);
         }
     });
     
