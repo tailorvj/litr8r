@@ -41,15 +41,12 @@
 
     </section>
     <section class="no-padding">
-        <h1 class="subtitles yoglimogli" id="messages">
+        <h1 class="subtitles yoglimogli" id="nextphrase">
         This is where you see the output that is on screen. If you'd like to clear it, just press Enter without typing anything. 
         </h1>
         <form action="">
           <input id="m" autocomplete="off" /><button>Send</button>
         </form>
-        <h1 class="subtitles yoglimogli" id="nextphrase">
-        This is where you see the output that is on screen. If you'd like to clear it, just press Enter without typing anything. 
-        </h1>
         <h1 class="subtitles yoglimogli" id="prevphrase">
         This is where the previous saved phrase is displayed. Next phrase is above form.
         </h1>
@@ -75,11 +72,47 @@
 	  $('#messages').append(msg);
 	});
 	//get phrases JSON and be available to scripts
-	var savedphrases;
+	var savedphrases, len;
 	$.getJSON('/phrases.json', function(res){
 	    savedphrases = res;
-	    $('#nextphrase').text(savedphrases.textsArray[0]);
+	    len = savedphrases.textArray.length;
+        if (len > 0)
+            $('#nextphrase').text(savedphrases.textsArray[0]);
+        else
+            $('#nextphrase').text('saved phrases buffer is empty');
 	});
+	//scroll through phrases
+	var currentindex = -1, screenbuffer = [
+	        'This is where the previous saved phrase is displayed, press down key to get it into the form',
+	        'type here instead of this text or press Enter to send it to screen',
+	        'This is where the next saved phrase is displayed, press up key to get it into the form'
+	    ]
+	$("body").keydown(function(e) { 
+        switch(e){
+            case(e.keyCode == 38){
+                //arrow up was fired
+                //load previous phrase in buffer into form input and preview buffer zone
+                //load next phrase in buffer to preview-next and previous phrase to preview-prev
+            currentindex += 1;
+            screenbuffer.unshift(savedphrases.textArray[currentindex]);
+            $('#nextphrase').text(screenbuffer[0]);
+            $('#m').val(screenbuffer[1]);
+            $('#prevphrase').text(screenbuffer[2]);
+            e.preventDefault();
+            }
+            case(e.keyCode == 40){
+                //arrow down was fired
+                //load next phrase in buffer into form input and preview buffer zone
+                //load previous phrase in buffer to preview-previous and next phrase to preview-next
+            currentindex -= 1;
+            $('#nextphrase').text(screenbuffer[0]);
+            $('#m').val(screenbuffer[1]);
+            $('#prevphrase').text(screenbuffer[2]);
+            e.preventDefault();
+            }
+        }
+    });
+    
       </script>
       <script>
 	/*
