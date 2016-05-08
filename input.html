@@ -87,7 +87,13 @@
 	        'This is where the previous saved phrase is displayed, press down key to get it into the form',
 	        'type here instead of this text or press Enter to send it to screen',
 	        'This is where the next saved phrase is displayed, press up key to get it into the form'
-	    ]
+	    ];
+    bufferstatus('initializing currentindex and screenbuffer');
+	function bufferstatus(message){
+        console.log(message);
+        console.log('currentindex: ' + currentindex);
+        console.log('screenbuffer:' + screenbuffer);
+	}
 	$("body").keydown(function(e) { 
         switch(e.keyCode){
             case 38:
