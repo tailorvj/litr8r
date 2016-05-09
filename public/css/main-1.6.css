@@ -280,7 +280,7 @@ html {
 }
 
 body {
-    font-family: "futura_ltbook", "HelveticaNeueLTStdRegular","HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "Alef", "HelveticaNeueLTStdRegular","HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     color: #fff;
     text-align: center;
 
@@ -334,7 +334,7 @@ section {
 
 section h1 {
 
-    font-family: "futura_ltbold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: "Alef", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 2.6em;
 
 }
@@ -742,6 +742,30 @@ section h2 {
 /* =============================================================================
    FONTS
    ========================================================================== */
+
+@font-face {
+    font-family: 'Alef';
+    src: url('Alef-Bold.eot');
+    src: url('Alef-Bold.eot?#iefix') format('embedded-opentype'),
+         url('Alef-Bold.woff') format('woff'),
+         url('Alef-Bold.ttf') format('truetype'),
+         url('Alef-Bold.svg#alefbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Alef';
+    src: url('Alef-Regular.eot');
+    src: url('Alef-Regular.eot?#iefix') format('embedded-opentype'),
+         url('Alef-Regular.woff') format('woff'),
+         url('Alef-Regular.ttf') format('truetype'),
+         url('Alef-Regular.svg#alefregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 @font-face {
     font-family: 'futura_ltbold';
