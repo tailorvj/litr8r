@@ -129,7 +129,7 @@
                 //currentindex -= 1;
                 //screenbuffer.shift();
                 //screenbuffer.push(screenbuffer.unshift());
-                screenbuffer.pop(screenbuffer.shift());
+                screenbuffer.push(screenbuffer.unshift());
                 console.log('down pushed. screenbuffer: ' + screenbuffer);
                 updateThreeLines(screenbuffer);
                 //$('#nextphrase').text(screenbuffer[0]);
