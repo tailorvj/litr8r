@@ -72,20 +72,10 @@
             if (savedphrases.textsArray.length > 0){
                 screenbuffer = screenbuffer.concat(savedphrases.textsArray);
             }
-            /*
-            len = savedphrases.textsArray.length;
-            if (len > 0)
-                //$('#nextphrase').text(savedphrases.textsArray[0]);
-                screenbuffer[0] = savedphrases.textsArray[0];
-        
-            else
-                $('#nextphrase').text('saved phrases buffer is empty');
-            */    
         });
         
         
         console.log('initializing screenbuffer');
-        //console.log('currentindex: ' + currentindex);
         console.log('screenbuffer:');
         console.log(screenbuffer);
 
@@ -110,38 +100,22 @@
         switch(e.keyCode){
             case 38:
                 //arrow up was fired
-                //load previous phrase in buffer into form input and preview buffer zone
-                //load next phrase in buffer to preview-next and previous phrase to preview-prev
-                //currentindex += 1;
+                //move first phrase in array to the end
                 screenbuffer.push(screenbuffer.shift());
                 console.log('up pushed. screenbuffer: ' + screenbuffer);
-                //screenbuffer.unshift(savedphrases.textsArray[currentindex-2]);
                 updateThreeLines(screenbuffer);
-                //$('#nextphrase').text(screenbuffer[0]);
-                //$('#m').val(screenbuffer[1]);
-                //$('#prevphrase').text(screenbuffer[2]);
                 e.preventDefault();
                 break;
             case 40:
                 //arrow down was fired
-                //load next phrase in buffer into form input and preview buffer zone
-                //load previous phrase in buffer to preview-previous and next phrase to preview-next
-                //currentindex -= 1;
-                //screenbuffer.shift();
-                //screenbuffer.push(screenbuffer.unshift());
+                //move last phrase in array to the beginning
                 screenbuffer.unshift(screenbuffer.pop());
                 console.log('down pushed. screenbuffer: ' + screenbuffer);
                 updateThreeLines(screenbuffer);
-                //$('#nextphrase').text(screenbuffer[0]);
-                //$('#m').val(screenbuffer[1]);
-                //$('#prevphrase').text(screenbuffer[2]);
                 e.preventDefault();
                 break;
             default:
             console.log('body.keydown defualt case run');
-                //$('#nextphrase').text(screenbuffer[0]);
-                //$('#m').val(screenbuffer[1]);
-                //$('#prevphrase').text(screenbuffer[2]);
         }
     });
     
@@ -150,20 +124,6 @@
         $('#m').val(screenbuffer[1]);
         $('#nextphrase').text(screenbuffer[2]);
     }
-      </script>
-      <script>
-	/*
-	//check if jquery is available for client
-	window.onload = function() {
-	    if (window.jQuery) {  
-		// jQuery is loaded  
-		alert("Yeah!");
-	    } else {
-		// jQuery is not loaded
-		alert("Doesn't Work");
-	    }
-	}      
-	*/
       </script>
     </body>
 </html>
