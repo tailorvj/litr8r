@@ -280,7 +280,7 @@ html {
 }
 
 body {
-    font-family: "Alef", "HelveticaNeueLTStdRegular","HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: 'Open Sans Hebrew', sans-serif;
     color: #fff;
     text-align: center;
 
@@ -334,7 +334,7 @@ section {
 
 section h1 {
 
-    font-family: "Alef", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: "Open Sans Hebrew", sans-serif;
     font-size: 2.6em;
 
 }
@@ -744,27 +744,25 @@ section h2 {
    ========================================================================== */
 
 @font-face {
-    font-family: 'Alef';
-    src: url('Alef-Bold.eot');
-    src: url('Alef-Bold.eot?#iefix') format('embedded-opentype'),
-         url('Alef-Bold.woff') format('woff'),
-         url('Alef-Bold.ttf') format('truetype'),
-         url('Alef-Bold.svg#alefbold') format('svg');
-    font-weight: bold;
-    font-style: normal;
-
+  font-family: 'Open Sans Hebrew';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/opensanshebrew/v3/OpenSansHebrew-Regular.eot);
+  src: url(//fonts.gstatic.com/ea/opensanshebrew/v3/OpenSansHebrew-Regular.eot?#iefix) format('embedded-opentype'),
+       url(//fonts.gstatic.com/ea/opensanshebrew/v3/OpenSansHebrew-Regular.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/opensanshebrew/v3/OpenSansHebrew-Regular.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/opensanshebrew/v3/OpenSansHebrew-Regular.ttf) format('truetype');
 }
 
 @font-face {
-    font-family: 'Alef';
-    src: url('Alef-Regular.eot');
-    src: url('Alef-Regular.eot?#iefix') format('embedded-opentype'),
-         url('Alef-Regular.woff') format('woff'),
-         url('Alef-Regular.ttf') format('truetype'),
-         url('Alef-Regular.svg#alefregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: 'Open Sans Hebrew';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/opensanshebrew/v3/OpenSansHebrew-Bold.eot);
+  src: url(//fonts.gstatic.com/ea/opensanshebrew/v3/OpenSansHebrew-Bold.eot?#iefix) format('embedded-opentype'),
+       url(//fonts.gstatic.com/ea/opensanshebrew/v3/OpenSansHebrew-Bold.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/opensanshebrew/v3/OpenSansHebrew-Bold.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/opensanshebrew/v3/OpenSansHebrew-Bold.ttf) format('truetype');
 }
 
 @font-face {
