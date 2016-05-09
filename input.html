@@ -128,7 +128,8 @@
                 //load previous phrase in buffer to preview-previous and next phrase to preview-next
                 //currentindex -= 1;
                 //screenbuffer.shift();
-                screenbuffer.push(screenbuffer.unshift());
+                //screenbuffer.push(screenbuffer.unshift());
+                screenbuffer.pop(screenbuffer.shift());
                 console.log('down pushed. screenbuffer: ' + screenbuffer);
                 updateThreeLines(screenbuffer);
                 //$('#nextphrase').text(screenbuffer[0]);
@@ -145,9 +146,9 @@
     });
     
     function updateThreeLines(screenbuffer){
-        $('#nextphrase').text(screenbuffer[0]);
+        $('#prevphrase').text(screenbuffer[0]);
         $('#m').val(screenbuffer[1]);
-        $('#prevphrase').text(screenbuffer[2]);
+        $('#nextphrase').text(screenbuffer[2]);
     }
       </script>
       <script>
