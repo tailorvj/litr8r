@@ -1,5 +1,6 @@
-שיר - רות דולורס וייס: לזכור. &#13;&#10; Remember
-Testing out English and Hebrew &#13;&#10; בודק שבירת שורות בין אנגלית לעברית
+שיר: רות דולורס וייס לזכור
+Remember
+Testing out English and Hebrew <br> בודק שבירת שורות בין אנגלית לעברית
 By Ruth Delores Weiss
 The sun is the sun
 The sea is the sea
