@@ -114,7 +114,7 @@
                 //load next phrase in buffer to preview-next and previous phrase to preview-prev
                 //currentindex += 1;
                 screenbuffer.push(screenbuffer.shift());
-                console.log('up pushed. screenbuffer: ' +screenbuffer);
+                console.log('up pushed. screenbuffer: ' + screenbuffer);
                 //screenbuffer.unshift(savedphrases.textsArray[currentindex-2]);
                 updateThreeLines(screenbuffer);
                 //$('#nextphrase').text(screenbuffer[0]);
@@ -129,7 +129,7 @@
                 //currentindex -= 1;
                 //screenbuffer.shift();
                 screenbuffer.push(screenbuffer.unshift());
-                console.log('down pushed. screenbuffer: ' +screenbuffer);
+                console.log('down pushed. screenbuffer: ' + screenbuffer);
                 updateThreeLines(screenbuffer);
                 //$('#nextphrase').text(screenbuffer[0]);
                 //$('#m').val(screenbuffer[1]);
