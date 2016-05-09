@@ -42,20 +42,53 @@
     </section>
     <section class="no-padding">
         <h1 class="subtitles yoglimogli" id="nextphrase">
-        A This is where you see the output that is on screen. If you'd like to clear it, just press Enter without typing anything. 
+        This is a place holder for #nextphrase
         </h1>
         <form action="">
-          <input id="m" autocomplete="off" /><button>Send</button>
+          <input id="m" autocomplete="off" value="this is a place holder for #m.value" /><button>Send</button>
         </form>
         <h1 class="subtitles yoglimogli" id="prevphrase">
-        B This is where the previous saved phrase is displayed. Next phrase is above form.
+        This is a place holder for #prevphrase
         </h1>
     </section>
       <script src="/socket.io/socket.io.js"></script>
       <script src="/public/js/jquery-2.1.3.js"></script>
       <script>
 	$( document ).ready(function() {
-	  $( "#m" ).focus();
+        var currentindex = 1, screenbuffer = [
+                'This is where the previous saved phrase is displayed, press down key to get it into the form',
+                'type here instead of this text or press Enter to send it to screen',
+                'This is where the next saved phrase is displayed, press up key twice to start'
+            ];
+        
+        updateThreeLines(screenbuffer);
+        
+        //get phrases JSON and be available to scripts
+        var savedphrases;
+        $.getJSON('/phrases.json', function(res){
+            console.log(res);
+            savedphrases = res;
+            if (savedphrases.textsArray.length > 0){
+                screenbuffer = screenbuffer.concat(savedphrases.textsArray);
+            }
+            /*
+            len = savedphrases.textsArray.length;
+            if (len > 0)
+                //$('#nextphrase').text(savedphrases.textsArray[0]);
+                screenbuffer[0] = savedphrases.textsArray[0];
+        
+            else
+                $('#nextphrase').text('saved phrases buffer is empty');
+            */    
+        });
+        
+        
+        console.log('initializing currentindex and screenbuffer');
+        //console.log('currentindex: ' + currentindex);
+        console.log('screenbuffer:');
+        console.log(screenbuffer);
+
+        $( "#m" ).focus();
 	});
 	var socket = io();
 	$('form').submit(function(){
@@ -71,61 +104,50 @@
 	  $('#messages').empty();
 	  $('#messages').append(msg);
 	});
-	//get phrases JSON and be available to scripts
-	var savedphrases, len;
-	$.getJSON('/phrases.json', function(res){
-	    console.log(res);
-	    savedphrases = res;
-	    len = savedphrases.textsArray.length;
-        if (len > 0)
-            $('#nextphrase').text(savedphrases.textsArray[0]);
-        else
-            $('#nextphrase').text('saved phrases buffer is empty');
-	});
-	//scroll through phrases
-	var currentindex = -1, screenbuffer = [
-	        '0 This is where the next saved phrase is displayed, press down key to get it into the form',
-	        '1 type here instead of this text or press Enter to send it to screen',
-	        '2 This is where the previous saved phrase is displayed, press up key to get it into the form'
-	    ];
-    bufferstatus('initializing currentindex and screenbuffer');
-	function bufferstatus(message){
-        console.log(message);
-        console.log('currentindex: ' + currentindex);
-        console.log('screenbuffer:');
-        console.log(screenbuffer);
-	}
+
 	$("body").keydown(function(e) { 
         switch(e.keyCode){
             case 38:
                 //arrow up was fired
                 //load previous phrase in buffer into form input and preview buffer zone
                 //load next phrase in buffer to preview-next and previous phrase to preview-prev
-                currentindex += 1;
-                screenbuffer.unshift(savedphrases.textsArray[currentindex]);
-                $('#nextphrase').text(screenbuffer[0]);
-                $('#m').val(screenbuffer[1]);
-                $('#prevphrase').text(screenbuffer[2]);
+                //currentindex += 1;
+                screenbuffer.push(screenbuffer.shift());
+                console.log('up pushed. screenbuffer: ' +screenbuffer);
+                //screenbuffer.unshift(savedphrases.textsArray[currentindex-2]);
+                updateThreeLines(screenbuffer);
+                //$('#nextphrase').text(screenbuffer[0]);
+                //$('#m').val(screenbuffer[1]);
+                //$('#prevphrase').text(screenbuffer[2]);
                 e.preventDefault();
                 break;
             case 40:
                 //arrow down was fired
                 //load next phrase in buffer into form input and preview buffer zone
                 //load previous phrase in buffer to preview-previous and next phrase to preview-next
-                currentindex -= 1;
-                screenbuffer.shift();
-                $('#nextphrase').text(screenbuffer[0]);
-                $('#m').val(screenbuffer[1]);
-                $('#prevphrase').text(screenbuffer[2]);
+                //currentindex -= 1;
+                //screenbuffer.shift();
+                screenbuffer.push(screenbuffer.unshift());
+                console.log('down pushed. screenbuffer: ' +screenbuffer);
+                updateThreeLines(screenbuffer);
+                //$('#nextphrase').text(screenbuffer[0]);
+                //$('#m').val(screenbuffer[1]);
+                //$('#prevphrase').text(screenbuffer[2]);
                 e.preventDefault();
                 break;
             default:
+            console.log('body.keydown defualt case run');
                 //$('#nextphrase').text(screenbuffer[0]);
                 //$('#m').val(screenbuffer[1]);
                 //$('#prevphrase').text(screenbuffer[2]);
         }
     });
     
+    function updateThreeLines(screenbuffer){
+        $('#nextphrase').text(screenbuffer[0]);
+        $('#m').val(screenbuffer[1]);
+        $('#prevphrase').text(screenbuffer[2]);
+    }
       </script>
       <script>
 	/*
