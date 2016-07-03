@@ -334,7 +334,7 @@ section {
 
 section h1 {
 
-    font-family: "Open Sans Hebrew", sans-serif;
+    font-family: "Open Sans Hebrew", "Noto Sans SC" sans-serif;
     font-size: 2.6em;
     font-weight: bold;
 
@@ -853,6 +853,33 @@ section h2 {
         font-weight: normal;
         font-style: normal;
 }
+
+@font-face {
+   font-family: 'Noto Sans SC';
+   font-style: normal;
+   font-weight: 400;
+   src: url('NotoSansSC-Regular.woff2') format('woff2'),
+        url('NotoSansSC-Regular.woff') format('woff'),
+        url('NotoSansSC-Regular.otf') format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans SC';
+   font-style: normal;
+   font-weight: 500;
+   src: url('NotoSansSC-Medium.woff2') format('woff2'),
+        url('NotoSansSC-Medium.woff') format('woff'),
+        url('NotoSansSC-Medium.otf') format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans SC';
+   font-style: normal;
+   font-weight: 700;
+   src: url('NotoSansSC-Bold.woff2') format('woff2'),
+        url('NotoSansSC-Bold.woff') format('woff'),
+        url('NotoSansSC-Bold.otf') format('opentype');
+ }
+
+
 
 .responsive-image.proposal {
     text-align: center;
