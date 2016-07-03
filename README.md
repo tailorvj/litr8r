@@ -7,7 +7,7 @@ litr8r is a live translation software with chroma key (green screen) background 
 * Edit /public/txt/texts.txt
 * Autodeploy to heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/tailorvj/litr8r/tree/1.01)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/tailorvj/litr8r/tree/1.01-chinese)
 
 ## Motivation
 
@@ -23,7 +23,7 @@ run node index to run the server and CTRL+C to stop it.
 
 Automatic deployment is available using the following button
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/tailorvj/litr8r/tree/1.01)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/tailorvj/litr8r/tree/1.01-chinese)
 
 If you like using the heroku toolbelt installed, simply create a new heroku app, add a web dyno and deploy via git push heroku master.
 
