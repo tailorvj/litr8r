@@ -25,12 +25,23 @@
 <p>litr8r is a live translation software with chroma key (green screen) background for live event broadcast mixing. Use it with your video mixer to display live translation during live event broadcasts.</p>
 
 <h2>
-<a id="motivation" class="anchor" href="#motivation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Motivation</h2>
+<a id="version-101" class="anchor" href="#version-101" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version 1.01</h2>
 
-<p>I've written it for use in live Internet broadcasts I produce, on UStream and on other platforms. </p>
+<ul>
+<li>Added saved translations feature in a simple text file</li>
+<li>Edit /public/txt/texts.txt</li>
+<li>Autodeploy to heroku</li>
+</ul>
+
+<p><a href="https://heroku.com/deploy?template=https://github.com/tailorvj/litr8r/tree/1.01"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a></p>
 
 <h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+<a id="motivation" class="anchor" href="#motivation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Motivation</h2>
+
+<p>I've written it for use in live Internet broadcasts I produce, on YouTube Live, Facebook Live and other platforms that suppot RTMP</p>
+
+<h2>
+<a id="local-installation" class="anchor" href="#local-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Local Installation</h2>
 
 <p>Clone the project to a node.js server, cd into project folder and run npm install to install all dependencies. </p>
 
@@ -39,23 +50,51 @@
 <h2>
 <a id="heroku-deployment" class="anchor" href="#heroku-deployment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Heroku deployment</h2>
 
-<p>If you have the heroku toolbelt installed, simply create a new heroku app, add a web dyno and deploy via git push heroku master.</p>
+<p>Automatic deployment is available using the following button</p>
+
+<p><a href="https://heroku.com/deploy?template=https://github.com/tailorvj/litr8r/tree/1.01"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a></p>
+
+<p>If you like using the heroku toolbelt installed, simply create a new heroku app, add a web dyno and deploy via git push heroku master.</p>
 
 <h2>
 <a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h2>
 
-<p><a href="https://tranquil-anchorage-5276.herokuapp.com/">Output</a>.</p>
+<p><a href="https://thawing-reaches-20064.herokuapp.com/input">Input</a>.</p>
 
-<p><a href="https://tranquil-anchorage-5276.herokuapp.com/input">Input</a>.</p>
+<p>Usage: </p>
+
+<ul>
+<li>Arrow up twice and Enter to start (due to a current bug. will be fixed soon)</li>
+<li>Arrow Up to load next saved phrase into editing area</li>
+<li>Arrow Down to load previous saved phrase into editing area</li>
+<li>Enter to submit to output</li>
+<li>Preview available at the top which you type</li>
+<li>Output monitor available at the bottom</li>
+</ul>
+
+<p><a href="https://thawing-reaches-20064.herokuapp.com">Output</a>.</p>
+
+<p>Usage: run in full screen and remove background color using chroma key in your video mixer</p>
 
 <h2>
 <a id="translation-workflow" class="anchor" href="#translation-workflow" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Translation workflow</h2>
 
 <p>The app consists of two main screens: Input and output. </p>
 
-<p>Output is on http://servername:5000</p>
-
 <p>Input is on http://servername:5000/input</p>
+
+<p>Usage: </p>
+
+<ul>
+<li>Arrow up twice and Enter to start (due to a current bug. will be fixed soon)</li>
+<li>Arrow Up to load next saved phrase into editing area</li>
+<li>Arrow Down to load previous saved phrase into editing area</li>
+<li>Enter to submit to output</li>
+<li>Preview available at the top which you type</li>
+<li>Output monitor available at the bottom</li>
+</ul>
+
+<p>Output is on http://servername:5000</p>
 
 <p>Run output window in full screen and connect to a video mixer with Chroma key support. Use Chroma key to remove green background and mix with video input. </p>
 
@@ -67,9 +106,7 @@
 <h2>
 <a id="screenshots" class="anchor" href="#screenshots" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshots</h2>
 
-<p><img src="http://tailorvj.github.io/images/20150406-litr8r-input-heroku.jpg" alt="litr8r prototype input screen"></p>
-
-<p><img src="http://tailorvj.github.io/images/20150406-litr8r-output-heroku.jpg" alt="litr8r prototype output screen"></p>
+<p>TODO: add currentl screenshots</p>
 
 <h2>
 <a id="contributors" class="anchor" href="#contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributors</h2>
@@ -79,7 +116,8 @@
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
-<p>GPL v3</p>
+<p>GPL v3
+Please give credit for subtitles softwaer to Tailor Vijay in your broadcasts</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/tailorvj/litr8r">Litr8r</a> is maintained by <a href="https://github.com/tailorvj">tailorvj</a>.</span>
